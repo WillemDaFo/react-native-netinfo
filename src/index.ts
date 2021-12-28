@@ -52,9 +52,9 @@ export function configure(
 export function fetch(
   requestedInterface?: string,
 ): Promise<Types.NetInfoState> {
-  if (!_state) {
+
     _state = createState();
-  }
+
   return _state.latest(requestedInterface);
 }
 
@@ -72,9 +72,9 @@ export function fetch(
 export function addEventListener(
   listener: Types.NetInfoChangeHandler,
 ): Types.NetInfoSubscription {
-  if (!_state) {
+
     _state = createState();
-  }
+
 
   _state.add(listener);
   return (): void => {
